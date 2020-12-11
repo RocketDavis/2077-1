@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - 2077-1</title>
+  
+  
+  
+  
+<style>
+#myCanvas{
+  background:rgba(100,100,255,.8);
+  border-style:dotted;
+  border-color:rgb(0,0,230);
+}
+</style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+  <canvas id="myCanvas" width="600" height="400">
+  Your browser does not support canvas. 
+</canvas>
+  
+  
+      <script id="rendered-js" >
+console.clear();
+console.log("hello world");
+
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext('2d');
+console.log(ctx);
+function drawTime() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  let d = new Date();
+  let sec = d.getSeconds();
+  console.log(sec);
+  ctx.font = "30px ariel";
+  ctx.fillText(sec,50,120)
+  ctx.fillStyle = "rgba(255,0,0,.7)";
+  ctx.fillRect(100, 100, 400*(sec/60), 20);
+  
+  let m = d.getMinutes();
+  console.log(m);
+  ctx.font = "30px ariel";
+  ctx.fillText(m,50,170)
+  ctx.fillStyle = "rgba(0,0,200,.7)";
+  ctx.fillRect(100, 150, 400*(m/60), 20);
+  
+  let h = d.getHours();
+  console.log(h);
+  ctx.font = "30px ariel";
+  ctx.fillText(h,50,220)
+  ctx.fillStyle = "rgba(140,0,150,.7)";
+  ctx.fillRect(100, 200, 400*(h/60), 20);
+}
+drawTime();
+setInterval(drawTime,1000);
+    </script>
+
+  
+
+</body>
+
+</html>
